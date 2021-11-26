@@ -19,14 +19,14 @@ void main() {
     canvas.drawLine(Offset(i * 0.2, 275), Offset(540 - i * 0.2, 275), p);
     Picture picLine = pictureRecorder.endRecording();
     SceneBuilder sceneBuilder = SceneBuilder();
-    sceneBuilder.pushOffset(0, 0);
+    sceneBuilder.pushOffset(100, 0);
     sceneBuilder.pushOpacity(128);
     sceneBuilder.addPicture(Offset(0, 0), picCross);
-    //sceneBuilder.pop();
+    sceneBuilder.pop();
+    sceneBuilder.pop();
     sceneBuilder.pushOffset(0, 0.5 * (i - 500));
     sceneBuilder.addPicture(Offset(0, 0), picLine);
-    //sceneBuilder.pop();
-    //sceneBuilder.pop();
+    sceneBuilder.pop();
     Scene scene = sceneBuilder.build();
     window.render(scene);
     scene.dispose();
